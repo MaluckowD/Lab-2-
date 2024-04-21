@@ -1,19 +1,21 @@
-database = {'1': ['Шарапов', 'Василий','Иванович', '5','варщик','50000'],
-    '2': ['Иванов', 'Иван','Иванович', '3','станочник','50000'],
-    '3': ['Шарапов', 'Василий','Иванович', '3','варщик','10000'],
-    '4': ['Егоров', 'Василий','Иванович', '5','станочник','500']
-}
+database = {'1': ['Шарапов', 'Василий', 'Иванович', '5', 'варщик', '50000'],
+            '2': ['Иванов', 'Иван', 'Иванович', '3', 'станочник', '50000'],
+            '3': ['Шарапов', 'Василий', 'Иванович', '3', 'варщик', '10000'],
+            '4': ['Егоров', 'Василий', 'Иванович', '5', 'станочник', '500']
+            }
+
 
 def view_all_records():
-    print('Запись'.center(15),'Фамилия'.center(15), 'Имя'.center(12),
-          'Отчество'.center(17),'Цех'.center(17),'Должность'.center(17),
+    print('Запись'.center(15), 'Фамилия'.center(15), 'Имя'.center(12),
+          'Отчество'.center(17), 'Цех'.center(17), 'Должность'.center(17),
           'Оклад'.center(15))
-    print(''.center(15, '-'),''.center(15, '-'), ''.center(12, '-'),
+    print(''.center(15, '-'), ''.center(15, '-'), ''.center(12, '-'),
           ''.center(17, '-'), ''.center(17, '-'), ''.center(17, '-'), ''.center(15, '-'))
     for key, val in database.items():
         print(key.center(15), val[0].center(15), val[1].center(12),
               val[2].center(17), val[3].center(17), val[4].center(17),
               val[5].center(15))
+
 
 def add_records(n):
     for i in range(n):
@@ -24,7 +26,8 @@ def add_records(n):
         workshop = input("Введите номер цеха: ")
         post = input("Введите занимаемую должность: ")
         salary = input("Введите оклад: ")
-        database[key] = [fam, name, otchestvo,workshop,post,salary]
+        database[key] = [fam, name, otchestvo, workshop, post, salary]
+
 
 def delete_record_by_key(key):
     if key in database:
@@ -33,23 +36,25 @@ def delete_record_by_key(key):
     else:
         print("Запись с таким ключом не найдена.")
 
+
 def calculate_average(department):
     total_salary = 0
     count = 0
-    for key,val in database.items():
+    for key, val in database.items():
         if int(val[3]) == department:
             total_salary += int(val[5])
             count += 1
     if count == 0:
-       print("Нет сотрудников в данном цехе.")
+        print("Нет сотрудников в данном цехе.")
     else:
-       avg_salary = total_salary / count
-       print(f"Средняя заработная плата в цехе {department}: {avg_salary}")
+        avg_salary = total_salary / count
+        print(f"Средняя заработная плата в цехе {department}: {avg_salary}")
+
 
 def calculate_average_by_post(post):
     total_salary = 0
     count = 0
-    for key, val  in database.items():
+    for key, val in database.items():
         if val[4] == post:
             total_salary += int(val[5])
             count += 1
@@ -58,6 +63,7 @@ def calculate_average_by_post(post):
     else:
         avg_salary = total_salary / count
         print(f"Средняя заработная плата для должности {post}: {avg_salary}")
+
 
 def main_menu():
     while True:
@@ -90,5 +96,8 @@ def main_menu():
         else:
             print("Некорректный выбор. Попробуйте снова.")
 
+
 if __name__ == "__main__":
     main_menu()
+
+# ctrl + alt + l
