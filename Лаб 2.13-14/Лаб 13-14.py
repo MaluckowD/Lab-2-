@@ -4,7 +4,6 @@ window = turtle.Screen()
 window.title("Звезда Давида")
 window.bgcolor("white")
 
-
 width = abs(int(input("Введите ширину пера: ")))
 # Создание черепахи
 star = turtle.Turtle()
@@ -14,6 +13,7 @@ star.width(width)
 
 # Рисование шестиконечной звезды Давида
 size = abs(float(input("Введите длину правильного треугольника: ")))
+
 number_of_sides = 3
 angle = 60
 star.penup()
