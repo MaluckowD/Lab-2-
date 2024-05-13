@@ -1,7 +1,6 @@
 import turtle
 import random
 
-
 # Функция для создания кнопки с заданными параметрами
 def create_button(x, y, label):
     turtle.penup()
