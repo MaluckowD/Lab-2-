@@ -1,1 +1,1 @@
-This is my Laboratornye rabot for second semestr
+This is where the second semester programming labs are located
